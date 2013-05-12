@@ -39,7 +39,7 @@ public class ParamVec {
     /**
      *  Add a stream to this vector
      *
-     * @param s The stream to be added
+     * @param p The stream to be added
      */ 
     public void add(Param p) {
 	params.addElement(p);

@@ -113,13 +113,9 @@ public class C45Call2 implements LearnerAlgI {
     }
 
     /**
-     * Configures this instance so that parameter <i>p</i> has
-     * value <i>v</i>. 
+     * Classifies all the input. 
      *
-     * @param p the parameter to set. 
-     * @param v the value of the parameter. 
-     * @return true if the operation succeeded. 
-     *
+     * @param input	the input to classify
      */
 
     public void classifyAll(ClassStreamAttValVecI input){

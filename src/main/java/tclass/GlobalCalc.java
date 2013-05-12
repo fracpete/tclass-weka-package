@@ -160,7 +160,7 @@ public class GlobalCalc {
     /**
      * Applies this set of global extractors to the Stream vector given.
      * 
-     * @param sv The stream vector that we wish to apply the particular 
+     * @param csv The stream vector that we wish to apply the particular 
      * global extractors to. 
      *
      * @return A StreamAttValVecI that contains the result of the

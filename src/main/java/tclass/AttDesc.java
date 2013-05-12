@@ -81,7 +81,7 @@ public class AttDesc implements AttDescI {
     /**
      * Set the data type for this attribute description
      *
-     * @param data the new data type. 
+     * @param dt the new data type. 
      */
     
     public void setDataType(DataTypeI dt){

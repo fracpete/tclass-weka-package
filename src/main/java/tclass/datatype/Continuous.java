@@ -115,11 +115,8 @@ public class Continuous implements DataTypeI {
     }
     
     /** 
-     * Configures this instance so that parameter <i>p</i> has 
-     * value <i>v</i>.  
+     * Outputs a string representation.
      * 
-     * @param p the parameter to set.  
-     * @param v the value of the parameter.  
      * @return true if the operation succeeded.  
      * 
      */ 

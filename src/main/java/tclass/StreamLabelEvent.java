@@ -33,7 +33,7 @@ public class StreamLabelEvent {
      *  Set the value of the <i>i</i>th attribute to a particular 
      *  value. 
      *  
-     *  @param att The attribute to change. More info on the attributes can 
+     *  @param cm The attribute to change. More info on the attributes can 
      *              be found from the AttDescVecI object. 
      */ 
 
@@ -44,7 +44,7 @@ public class StreamLabelEvent {
     /** 
      * Get the value of the <i>i</i>th attribute 
      *
-     * @param att Attribute you want the value for.
+     * @param index Attribute you want the value for.
      * @return the value of the <i>i</i>th attribute. 
      */
 

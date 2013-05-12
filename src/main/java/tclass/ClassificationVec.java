@@ -48,7 +48,7 @@ public class ClassificationVec implements ClassificationVecI {
     /**
      *  Add a stream to this vector
      *
-     * @param s The stream to be added
+     * @param c The stream to be added
      */ 
     public void add(ClassificationI c){
 	classvec.addElement(c); 

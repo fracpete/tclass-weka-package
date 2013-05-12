@@ -108,7 +108,6 @@ public class Increasing implements PepI {
      *
      * @param p the parameter to set. 
      * @param v the value of the parameter. 
-     * @return true if the operation succeeded. 
      *
      */
 
@@ -278,7 +277,7 @@ public class Increasing implements PepI {
      * The finding function for this PEP. Returns all the events
      * of the form this PEP represents. Returns an EventVecI. 
      * 
-     * @param c The channel that we want the finding function to
+     * @param s The channel that we want the finding function to
      * operate on. 
      * @return A vector of the events of the type extracted by this
      * PEP. 

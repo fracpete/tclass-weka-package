@@ -183,7 +183,6 @@ public class Discrete implements DataTypeI {
      * 
      * @param p the parameter to set.  
      * @param v the value of the parameter.  
-     * @return true if the operation succeeded.  
      * 
      */ 
  

@@ -63,8 +63,6 @@ public interface PepI extends Cloneable {
      *
      * @param p the parameter to set. 
      * @param v the value of the parameter. 
-     * @return true if the operation succeeded. 
-     *
      */
 
     public void setParam(String p, String v) throws InvalidParameterException; 
@@ -94,7 +92,7 @@ public interface PepI extends Cloneable {
      * The finding function for this PEP. Returns all the events
      * of the form this PEP represents. Returns an EventVecI. 
      * 
-     * @param c The channel that we want the finding function to
+     * @param s The channel that we want the finding function to
      * operate on. 
      * @return A vector of the events of the type extracted by this
      * PEP. 

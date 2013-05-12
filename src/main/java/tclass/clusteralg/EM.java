@@ -810,9 +810,7 @@ public class EM
         /**
          * Classifies a given instance.
          *
-         * @param instance the instance to be assigned to a cluster
-         * @return the number of the assigned cluster as an interger
-         * if the class is enumerated, otherwise the predicted value
+         * @param data the instance to be assigned to a cluster
          * @exception Exception if instance could not be classified
          * successfully
          */
@@ -832,8 +830,7 @@ public class EM
         /**
          * Predicts the cluster memberships for a given instance.
          *
-         * @param data set of test instances
-         * @param instance the instance to be assigned a cluster.
+         * @param inst the instance to be assigned a cluster.
          * @return an array containing the estimated membership 
          * probabilities of the test instance in each cluster (this 
          * should sum to at most 1)

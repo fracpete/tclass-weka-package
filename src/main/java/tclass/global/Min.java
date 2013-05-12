@@ -122,7 +122,6 @@ public class Min implements GlobalExtractorI {
      *
      * @param p The parameter to set.
      * @param v The value of the parameter. 
-     * @return True if the setting succeeded; false otherwise. 
      */
     
     public void setParam(String p, String v)  throws InvalidParameterException {

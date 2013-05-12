@@ -183,7 +183,6 @@ public class FastMath {
      * @param a require a>=0
      * @param x require x>=0
      * @return 0 if x<0, a<=0 or a>2.55E305 to avoid errors and over/underflow
-     * @author Jaco van Kooten
      */
     public static double incompleteGamma(double a, double x) {
 	if (x <= 0.0 || a <= 0.0 || a > logGamma_xBig)
