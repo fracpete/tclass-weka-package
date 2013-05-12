@@ -161,7 +161,7 @@
 
   <!-- Creates a zip file of the datasets -->
   <target name="datasets" depends="init_dist" description="Create a zip file of the datasets in ./dist">
-    <zip destfile="${dist}/datasets.zip" basedir="src/site/resources" includes="datasets/**/*" />
+    <zip destfile="${dist}/data.zip" basedir="src/site/resources" includes="data/**/*" />
   </target>
 
   <target name="make_package" depends="clean, datasets, exejar" description="Make the package zip file. Run with -Dpackage=[package name]">
@@ -182,11 +182,11 @@
           todir="${dist}/${package}"/>
     <copy file="COPYING"
           todir="${dist}/${package}"/>
-    <copy file="usage.html"
+    <copy file="src/site/resources/usage.html"
           todir="${dist}/${package}"/>
-    <copy file="faq.html"
+    <copy file="src/site/resources/faq.html"
           todir="${dist}/${package}"/>
-    <copy file="${dist}/datasets.zip"
+    <copy file="${dist}/data.zip"
           todir="${dist}/${package}"/>
     <mkdir dir="${dist}/${package}/lib"/>
     <copy todir="${dist}/${package}/lib" >
