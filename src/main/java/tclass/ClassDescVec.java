@@ -25,6 +25,8 @@ package tclass;
 import tclass.util.StringMap;
 
 public class ClassDescVec implements ClassDescVecI {
+  /** for serialization. */
+  private static final long serialVersionUID = 1493299087832249117L;
     private StringMap classmap; 
 
     /** 

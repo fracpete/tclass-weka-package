@@ -25,6 +25,8 @@ import java.util.Vector;
 
 public class StreamVec implements StreamVecI {
     
+  /** for serialization. */
+  private static final long serialVersionUID = 5701524033478394961L;
     private Vector streams = new Vector(); 
     
     /**

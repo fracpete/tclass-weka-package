@@ -38,6 +38,8 @@ import tclass.EventI;
 import tclass.StreamEventsI;
 import tclass.StreamI;
 public class GClust implements ClusterI {
+  /** for serialization. */
+  private static final long serialVersionUID = -3322062986038975246L;
     GClustVec parent; 
     EventI origEvent; 
     String myName; 

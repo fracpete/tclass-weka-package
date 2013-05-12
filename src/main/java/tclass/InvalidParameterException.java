@@ -26,6 +26,9 @@ package tclass;
 
 public class InvalidParameterException extends Exception {
 
+  /** for serialization. */
+  private static final long serialVersionUID = -1286882661113641141L;
+
     public InvalidParameterException(String param, String value, String error){
 	super("P: " + param + " V: " + value + " error: " + error); 
     }

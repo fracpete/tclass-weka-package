@@ -26,6 +26,9 @@ import java.io.StreamTokenizer;
 
 public class FileFormatException extends Exception {
     
+  /** for serialization. */
+  private static final long serialVersionUID = 894833276817138061L;
+
     public FileFormatException(){
 	super();
     }

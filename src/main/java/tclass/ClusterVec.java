@@ -28,6 +28,8 @@ import tclass.util.StringMap;
 
 public class ClusterVec implements ClusterVecI { 
 
+  /** for serialization. */
+  private static final long serialVersionUID = 213037132327755681L;
     private Vector clusters = new Vector(); 
     private StringMap clusSM = new StringMap(); 
     public ClusterVec(){

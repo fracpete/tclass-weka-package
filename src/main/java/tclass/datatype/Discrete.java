@@ -34,6 +34,8 @@ import tclass.util.StringMap;
 
 public class Discrete implements DataTypeI {
     
+  /** for serialization. */
+  private static final long serialVersionUID = -4021483744130676788L;
     boolean isOrdered = false; 
     boolean complexCost = false; 
     StringMap valmap = new StringMap(); 

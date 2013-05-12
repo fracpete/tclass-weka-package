@@ -49,6 +49,8 @@ import tclass.util.Debug;
 
 
 class KMClusterVec implements ClusterVecI {
+  /** for serialization. */
+  private static final long serialVersionUID = 6107239554580206513L;
     KMCluster[] clusters; 
     
 

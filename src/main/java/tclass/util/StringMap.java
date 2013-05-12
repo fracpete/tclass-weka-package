@@ -43,6 +43,8 @@ import java.util.Hashtable;
 import java.util.Vector;
 
 public class StringMap implements Cloneable, Serializable {
+  /** for serialization. */
+  private static final long serialVersionUID = -2015202023191511926L;
     Hashtable str2num; 
     Vector num2str; 
     int numEntries; 

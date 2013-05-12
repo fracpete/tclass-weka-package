@@ -38,6 +38,8 @@ import tclass.util.Debug;
 
 public class Stream implements StreamI {
     
+  /** for serialization. */
+  private static final long serialVersionUID = 6744267364187512594L;
     String comment; 
     private float data[][]; 
     

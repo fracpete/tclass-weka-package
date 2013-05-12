@@ -26,6 +26,8 @@ import java.util.Vector;
 
 public class ClassificationVec implements ClassificationVecI {
 
+  /** for serialization. */
+  private static final long serialVersionUID = 2721123633183235867L;
     private Vector classvec = new Vector(); 
     private ClassDescVecI classdescvec; 
 

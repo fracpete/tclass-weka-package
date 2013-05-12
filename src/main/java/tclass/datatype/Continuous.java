@@ -30,6 +30,8 @@ import tclass.util.Debug;
 
 public class Continuous implements DataTypeI {
     
+  /** for serialization. */
+  private static final long serialVersionUID = -5454754605436150900L;
     private static final int LINEAR = 1; 
     private static final int SQUARE = 2; 
     

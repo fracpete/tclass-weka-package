@@ -27,6 +27,8 @@ package tclass;
 
 public class Classification implements ClassificationI {
 
+  /** for serialization. */
+  private static final long serialVersionUID = -7110455352271801196L;
     int realClass = ClassificationI.UNCLASSIFIED; 
     int predictedClass = ClassificationI.UNCLASSIFIED; 
     float predictedClassConfidence = 0; 

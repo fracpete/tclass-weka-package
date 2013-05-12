@@ -35,6 +35,9 @@ import tclass.DomDesc;
 
 class ChanList extends Panel {
     
+  /** for serialization. */
+  private static final long serialVersionUID = -6390375326420116358L;
+
     public ChanList(DomDesc dd){
 	this.setLayout(new GridLayout(dd.numChans()+1,1)); 
 	this.add(new Label("Channel Name")); 

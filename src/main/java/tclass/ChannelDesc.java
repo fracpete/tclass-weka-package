@@ -27,6 +27,8 @@ import java.io.Serializable;
   */
 
 public class ChannelDesc implements Serializable {
+  /** for serialization. */
+  private static final long serialVersionUID = -2144120836326202479L;
     private String name; 
     private DataTypeI datatype; 
 

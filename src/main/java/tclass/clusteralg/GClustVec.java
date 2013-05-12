@@ -23,6 +23,8 @@ import tclass.EventVecI;
 import tclass.StreamEventsI;
 
 public class GClustVec implements ClusterVecI {
+  /** for serialization. */
+  private static final long serialVersionUID = 8749922238074243554L;
     EventDescI eventDesc; 
     GClust[] clusters; 
     float[] sds; 

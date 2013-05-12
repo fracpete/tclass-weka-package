@@ -65,6 +65,9 @@ public class EM
     implements OptionHandler
 {
 
+    /** for serialization. */
+    private static final long serialVersionUID = 5864882722118542431L;
+
     /** hold the discrete estimators for each cluster */
     private Estimator m_model[][];
 

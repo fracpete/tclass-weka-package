@@ -38,6 +38,8 @@ import tclass.util.Debug;
 
 public class ClassStreamVec implements ClassStreamVecI {
     
+  /** for serialization. */
+  private static final long serialVersionUID = -6281962425283661900L;
     private ClassificationVecI classVec;
     private StreamVecI streamVec; 
     private DomDesc domDesc; 

@@ -36,6 +36,9 @@ import tclass.util.StringMap;
 
 public class DomDesc implements Cloneable, Serializable {
     
+  /** for serialization. */
+  private static final long serialVersionUID = -4946947705487919699L;
+
     public static final int NO_SUCH_LABEL = -1; 
     
     private ClassDescVecI classdesc; 
