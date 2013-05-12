@@ -1,0 +1,32 @@
+classes [ God I Norway alive all answer boy building buy change_mind_
+cold come computer_PC_ cost crazy danger deaf different draw drink eat
+exit flash-light forget girl give glove go happy head hear hello
+his_hers hot how hurry hurt innocent is_true_ joke juice know later
+lose love make man maybe mine money more name no not-my-problem paper
+pen please polite question read ready research responsible right sad
+same science share shop soon sorry spend stubborn surprise take temper
+thank think tray us voluntary wait_notyet_ what when where which who
+why wild will write wrong yes you zero]  
+
+channel lx continuous { }
+channel ly continuous { } 
+channel lz continuous { } 
+channel lroll continuous { } 
+channel lpitch continuous { } 
+channel lyaw continuous { } 
+channel lthumb continuous { } 
+channel lfore continuous { }        
+channel lmiddle continuous { } 
+channel lring continuous { } 
+channel llittle continuous { } 
+channel rx continuous { }
+channel ry continuous { } 
+channel rz continuous { } 
+channel rroll continuous { } 
+channel rpitch continuous { } 
+channel ryaw continuous { } 
+channel rthumb continuous { } 
+channel rfore continuous { }        
+channel rmiddle continuous { } 
+channel rring continuous { } 
+channel rlittle continuous { } 

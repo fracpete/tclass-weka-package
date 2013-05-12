@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head>
+  <title>TClass usage</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Quanta Plus">
+</head>
+<body>
+
+<h1>TClass usage</h1>
+
+<h2>Basics</h2>
+
+This page assumes that you have already installed TClass successfully
+and have some background in machine learning and have possibly even
+read the paper and/or PhD on TClass. Once you have ensured that both
+TClass and Weka are in your CLASSPATH environment variable, all you
+need to do to run TClass is:
+<p>
+</p><pre>% java tclass.TClass
+</pre>
+<p>
+Of course, it generally helps if you do this in a directory that is set up for
+TClass (we will call these TClass experiment directories), for example if 
+$TCLASS_HOME is where you installed TClass, try for 
+example,$TCLASS_HOME/data/techsupport/.</p><p>
+TClass requires several files. These are:
+</p><p>
+</p><ul>
+<li><b>Domain description file:</b> (Default: tclass.tdd) This file describes 
+thedomain of interest: the number of channels, their types etc. etc.
+</li><li><b>Training set:</b> (Default: tclass.tsl) This file lists the name of each 
+datafile that contains a training time series and each time series' class.
+</li><li><b>Test set</b>: (Default: tclass.ttl) This file lists the name of each data 
+filethat contains a testing time series and its class.
+</li><li><b>Run settings</b>: (Default: tclass.tal) This file describes which 
+metafeatures to extract from which channels and how to cluster them.
+</li></ul>
+
+In addition, in most TClass experiment directories, you will find a "data" 
+subdirectory which contains the actual time series data. Time series data are 
+indicated by a ".tsd"suffix. These and more are described in my PhD, in 
+particular 
+<a href="http://www.cse.unsw.edu.au/%7Ewaleed/phd/html/node78.html">this 
+section on the practical implementation</a> of TClass.<p></p>
+<h2>TClass command line options</h2>
+
+TClass currently supports the following command line options:
+
+<ul>
+<li>-tr <i>filename</i>: Use <i>filename</i> for the training set.
+</li><li>-te <i>filename</i>: Use <i>filename</i> for the test set.
+</li><li>-dd <i>filename</i>: Use <i>filename</i> for the domain description. 
+</li><li>-s <i>filename</i>: Use <i>filename</i> for the settings for the learning 
+task. 
+
+</li><li>-l <i>learner</i>: Use <i>learner</i> (where <i>learner</i> is a weka 
+class) instead of the default <code>weka.classifiers.j48.J48</code>. Note that 
+you can use ":" as a separator. So for example, if you wanted to use part, but 
+with a minimum of 5 examples per leaf node (usually expressed at the command 
+line as -M 5), it could be given as 
+<code>-l weka.classifiers.j48.PART:-M:5</code>. Likewise, to use AdaBoost with 
+J48 as the base learner, this could be given as 
+<code>-l weka.classifiers.AdaBoostM1:-W:weka.classifiers.j48.J48</code>
+</li><li>-md: Make a description of the 
+extracted rule, using the methoddescribed in the PhD Thesis. This takes a 
+synthetic feature, andtranslates it to a more human-readable form. <b>Note: 
+</b>Currently,this only works with directed clustering and decision rule or 
+decisiontree based learners that produce attribute-value comparisons (such as x 
+&lt;= 1). 
+</li></ul>
+
+<h2>Hints</h2>
+
+TClass has been developed and tested using JDK 1.2, 1.3 and 1.4. 
+<p>
+</p>
+Some java implementations have a <code>-server</code> option, designed 
+for code continually running on servers. It seems to do more code optimisation 
+in this case. Empirical experience suggests that if your TClass process is 
+likely to run for more than 10 minutes, the -server improves performance. For 
+processes running for more than a few hours, we have found up to a 25 per cent 
+reduction in running time. <p>
+Also note that because of the size of the datasets, you may have to increase 
+the amount of RAM available to java processes. This is typically done through 
+the <code>-Xmx</code> command -- e.g. <code>-Xmx200m</code> to give a java 
+process 200 megabytes of RAM</p>
+
+<h2>Contacts</h2>
+
+If you have any questions, please do not hesitate to contact <a href="mailto:waleed@cse.unsw.edu.au">Waleed Kadous</a> with any queries.
+<p>
+TClass's web page is at: <a href="http://www.cse.unsw.edu.au/%7Ewaleed/tclass/">
+http://www.cse.unsw.edu.au/~waleed/tclass/</a></p></body></html>

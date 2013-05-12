@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <title>README</title>
+  </head>
+  <body>
+<pre>+----------------------------------------------------------------------
+|
+|  				README
+|		 		TClass 1.0.0
+|				1 May 2003
+|
+|                Java Program for Classification of Multivariate 
+|				Time Series
+|
+|		Copyright (c) 1999-2003 Mohammed Waleed Kadous
+|			Email: waleed@cse.unsw.edu.au
+|
+|
++----------------------------------------------------------------------
+
+INSTALLATION
+------------ 
+
+These instructions assume a Unix-type operating system. Please modify
+them to suit your needs for other operating systems. 
+
+1) Download the most recent version of TClass from: 
+
+	http://www.cse.unsw.edu.au/~waleed/tclass/
+
+It should be called something like: tclass-1.0.0.jar
+
+2) Decompress the jar file as follows: 
+	
+% jar xvf tclass-1.0.0.jar
+
+3) Set TCLASS_HOME to be the directory that this README is in, 
+which should be called something like "tclass". This is typically done
+by typing:
+
+% cd tclass
+% export TCLASS_HOME=$PWD 
+
+or for csh-type shells: 
+
+% setenv TCLASS_HOME $PWD.
+
+4) Add $TCLASS_HOME/tclass.jar and $TCLASS_HOME/weka.jar to your
+CLASSPATH environment variable. This is done under sh and its
+derivatives by typing:
+
+% export CLASSPATH=$TCLASS_HOME/tclass.jar:$TCLASS_HOME/weka.jar:${CLASSPATH}
+
+and under csh and its derivatives by typing
+
+% setenv CLASSPATH ${TCLASS_HOME}/tclass.jar:${TCLASS_HOME}/weka.jar:${CLASSPATH}
+
+
+GETTING STARTED
+---------------
+
+Once you've set up, go to the data/ directory which includes several
+examples. For example, try the following: 
+
+% cd $TCLASS_HOME/data/techsupport
+% java tclass.TClass
+
+This starts TClass running. 
+
+
+FILES INCLUDED
+--------------
+
+This package includes the following subdirectories: 
+
+- data: Contains three small application domains. More complete data
+  sets are available from the TClass web site. techsupport is a simple
+  pedagogical example -- see my PhD thesis. cylbellfunnel is a
+  traditional problem in time series classification. Auslan is a
+  real-word data set consisting of recordings of two signs (come and
+  thank) from Auslan. This dataset has been smoothed to simplify
+  classification. The larger version of this dataset is available at:
+	http://kdd.ics.uci.edu/databases/auslan2/auslan.html
+
+- doc: Documentation for TClass. 
+
+- src: The source code for TClass. 
+
+- tclass.jar: Jar file including all class files. 
+
+- Makefile: Make file to make the jar files and documentation. 
+
+- weka.jar: This is the jar file of Weka classes from Weka version
+3.2.3. It is included here for completeness and self-containment. 
+
+
+BUGS, FEATURES, SUPPORT
+-----------------------
+
+I am happy to answer all questions and entertain bug fixes. Please
+e-mail me at waleed@cse.unsw.edu.au. It would be appreciated if you
+could include [TClass] in the subject of your e-mail. 
+
+Any additional metafeature extractors, segmenters etc, etc,
+are VERY VERY welcome! 
+
+
+LINKS
+-----
+
+Weka: http://www.cs.waikato.ac.nz/ml/weka/
+
+- TClass uses Weka for the machine learning backend. 
+
+Waleed Kadous' PhD: 
+
+- http://www.cse.unsw.edu.au/~waleed/phd/
+
+Includes details of what TClass is about, how it works internally etc.
+
+TClass Home: 
+
+- http://www.cse.unsw.edu.au/~waleed/tclass/
+
+
+THANKS
+------
+
+Ultimate thanks go to The Creator for giving me the abilities to write
+this program. 
+
+Special thanks go to the developers (Eibe Frank, Leonard Trigg, Mark
+Hall, Richard Kirkby) of Weka for producing such a wonderful machine
+learning toolkit.  Weka 3.2.3 is included in this package under the
+terms of the GNU General Public License.
+
+Thanks to Steve Moyle for encouraging me to release TClass. 
+
+Thanks to Todd Wright for providing the sign language data. 
+
+
+
+LICENSE
+-------
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or (at
+your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307,
+USA.
+</pre>
+  
+
+</body></html>

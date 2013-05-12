@@ -1,0 +1,19 @@
+globalcalc {
+ global V-mean mean {
+    channel V
+  } 
+}
+metafeatures {
+  metafeature V-loudrun rle {
+    minrun "1"
+    limitvalues " H "
+  }
+}
+
+segmentation {
+  segmenter V-loudrun directed {
+    metafeature V-loudrun 
+    numTrials "10000"
+    dispMeasure chisquare
+  }
+}

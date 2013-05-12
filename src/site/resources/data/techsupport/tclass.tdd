@@ -1,0 +1,5 @@
+classes [ Happy Angry ] 
+channel V discrete {
+  values "L H" 
+}
+

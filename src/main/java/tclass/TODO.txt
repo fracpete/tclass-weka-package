@@ -1,0 +1,14 @@
+TODO
+
+- Add capability for direct reading of metafeatures. 
+- Rename everything. 
+- Make a generator directory, including the MakeCBF and MakeTTest files. 
+- Introduce new file formats: 
+  - .tmd  TClass metafeature data file. Includes a list of metafeatures and their parameters. 
+  - .tml   List of instances for training
+  - .tnl    List of instances for testing. 
+  - .tdm  Metafeature description language. 
+
+DONE
+
+- Added support for discrete values. 

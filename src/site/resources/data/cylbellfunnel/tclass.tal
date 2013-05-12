@@ -1,0 +1,48 @@
+globalcalc {
+   global c-mean mean {
+   } 
+}
+metafeatures { 
+   metafeature c-dec dec {
+     channel C
+   } 
+   metafeature c-inc inc {
+     channel C
+   } 
+   metafeature c-plat plat {
+      channel C
+   }
+   metafeature c-max lmax {
+        channel C
+   }
+   metafeature c-min lmin {
+      channel C
+   }
+}
+segmentation {
+   segmenter c-dec directed {
+        dispMeasure chisquare
+   numTrials  "1000" 
+  metafeature  c-dec
+   }
+   segmenter c-inc directed {
+        dispMeasure chisquare
+   numTrials  "1000" 
+  metafeature  c-inc
+   }
+    segmenter c-plat directed {
+        dispMeasure chisquare
+   numTrials  "1000" 
+  metafeature  c-plat
+   }
+   segmenter c-lmax directed {
+        dispMeasure chisquare
+   numTrials  "1000" 
+  metafeature  c-max
+   }
+   segmenter c-lmin directed {
+        dispMeasure chisquare
+   numTrials  "1000" 
+  metafeature  c-min
+   } 
+}

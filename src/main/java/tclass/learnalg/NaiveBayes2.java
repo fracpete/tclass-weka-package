@@ -1,0 +1,369 @@
+/**
+ * Implements a naive Bayes learning algorithm. 
+ *
+ * 
+ * @author Waleed Kadous
+ * @version $Id: NaiveBayes2.java,v 1.1.1.1 2002/06/28 07:36:16 waleed Exp $
+ */
+
+package tclass.learnalg;   
+
+import tclass.*; 
+import tclass.util.*; 
+import tclass.datatype.*; 
+
+//Note: We only discretise continuous values, I guess
+ 
+class NBClassifier2 implements ClassifierI {
+    String name = "nbayes"; 
+    String description = "Naive Bayes Classifier"; 
+    BayesTable2 bt; 
+    
+    NBClassifier2(BayesTable2 bt){
+	this.bt = bt; 
+    }
+    
+    public String getName(){
+	return name; 
+    }
+
+    public String getDescription(){
+	return description; 
+    }
+    
+    public void classify(StreamAttValI instance, ClassificationI
+			 classn){
+	// Now find most probable class. 
+	int numClasses = bt.classAttValProb.length; 
+	int bestClass = -1; 
+	float maxProb = -Float.MAX_VALUE; 
+	for(int i=0; i<2; i++){
+	    float prob = bt.evaluateProb(instance, i); 
+	    Debug.dp(Debug.FN_PARAMS, "For class " +
+		     classn.getRealClass() + " against " + i +
+		     " has log proby " + prob); 
+	    if(prob > maxProb){
+		maxProb = prob; 
+		bestClass = i;
+	    }
+	    
+	}
+       
+	float prob = bt.evaluateProb(instance, 0); 
+	Debug.dp(Debug.PROGRESS, "LProb = " + prob + " LDP = " + bt.logDP); 
+	prob -= bt.logDP; 
+	//Make only a positive description
+	//And now update the Classification object we were given. 
+	classn.setPredictedClass(bestClass); 
+	classn.setPredictedClassConfidence(prob); 
+
+    }
+
+    public String toString(){
+	return ("Naive Bayes Learner. Table: \n" + bt.toString()); 
+    }
+}
+
+class BayesTable2 {
+    // We need one entry for each attribute for each value of each
+    // attribute of each class. 
+    // Modded for just 2 classes. 
+    int numStreams; 
+    float probTrue; 
+    float probFalse; 
+    float[][][] classAttValProb; 
+    DiscretiserI[] attDiscer;
+    int numAtts; 
+    int numClasses; 
+    DomDesc domDesc; 
+    float defaultProb = (float) 0.5; 
+    float logDP; 
+    int classIndex; 
+    // Evaluate probability. 
+
+    BayesTable2(DomDesc d, DiscretiserI[] attDiscer,
+	       ClassStreamAttValVecI csavvi, int classIndex){
+	// Do we do laplace correction on class? No. That's pretty
+	// silly. 
+	// So let's start off by making some assignments. 
+	this.domDesc = d; 
+	this.classIndex = classIndex; 
+	this.attDiscer = attDiscer; 
+	ClassDescVecI classes = domDesc.getClassDescVec(); 
+	numClasses = classes.size(); 
+	ClassificationVecI cvi = csavvi.getClassVec(); 
+	numStreams = cvi.size(); 
+	float increment = (float) 1.0/numStreams; 
+	numAtts = attDiscer.length; 
+	Debug.dp(Debug.EVERYTHING, "NumStreams = " + numStreams + " inc " + increment); 
+	for(int i=0; i < numStreams; i++){
+	    if(cvi.elAt(i).getRealClass() == classIndex){
+		probTrue += increment; 
+	    }
+	    else {
+		probFalse += increment; 
+	    }
+	}
+
+	// Ok, now we have to deal with the stuff for the
+	// probabilities. The first issue is construction. 
+	classAttValProb = new float[2][numAtts][]; 
+	for(int j=0; j < numAtts; j++){
+	    int size = attDiscer[j].getDiscType().size(); 
+	    for(int i=0; i < 2; i++){
+		classAttValProb[i][j] = new float[size]; 
+	    }
+	}
+	// Now initialise for laplace correction. 
+	// And also default probability. 
+
+	for(int i=0; i < 2; i++){
+	    for(int j=0; j < numAtts; j++){
+		float[] vals = classAttValProb[i][j];
+		for(int k=0; k < vals.length; k++){
+		    vals[k] = 1; 
+		}
+		if(i==0){
+		    defaultProb *= 1.0/vals.length; 
+		}
+	    }
+	    
+	}
+
+	//And now, we add the instances from the data. 
+	StreamAttValVecI savvi = csavvi.getStreamAttValVec(); 
+	for(int i=0; i < numStreams; i++){
+	    int thisClass = (cvi.elAt(i).getRealClass() == classIndex) ? 0:1; 
+	    StreamAttValI thisStream = savvi.elAt(i); 
+	    for(int j=0; j < numAtts; j++){
+		int value =
+		    attDiscer[j].discretise(thisStream.getAtt(j));
+		classAttValProb[thisClass][j][value]++; 
+	    }
+	}
+	
+	// And now renormalise all probabilities. And take logs. 
+	for(int i=0; i < 2; i++){
+	    for(int j=0; j < numAtts; j++){
+		// We know the number of instances in this line of the 
+		// array. It should be the results of the laplace
+		// correction which is = to the size of this array; 
+		// plus the number of instances of this class. 
+		int numVals = classAttValProb[i][j].length; 
+		float denominator;
+		if(i==0){
+		    denominator = probTrue*numStreams + numVals;
+		}
+		else {
+		    denominator = probFalse*numStreams + numVals;
+		}
+		Debug.dp(Debug.EVERYTHING, "denominator = " +
+			 denominator); 
+		for(int k=0; k < numVals; k++){
+		    
+		    classAttValProb[i][j][k] /= denominator; 
+		    classAttValProb[i][j][k] = (float) Math.log(classAttValProb[i][j][k]); 
+		    
+		}
+		
+	    }
+	}
+	// Finally, take the default log probability. 
+	logDP = (float) Math.log(defaultProb); 
+	// And I think that's it. 
+    }
+    
+    
+    float evaluateProb(StreamAttValI savi, int qClass){
+	float retval = (qClass ==0) ? probTrue: probFalse; 
+	if(retval == 0){
+	    return -Float.MAX_VALUE;
+	}
+	else {
+	    retval = (float) Math.log(retval); 
+	}
+	for(int i=0; i < numAtts; i++){
+	    int value = attDiscer[i].discretise(savi.getAtt(i)); 
+	    retval += classAttValProb[qClass][i][value]; 
+	}
+	return retval; 
+    }
+    
+    public String toString(){
+	StringBuffer rvBuff = new StringBuffer(1000); 
+	ClassDescVecI cdv = domDesc.getClassDescVec(); 
+	rvBuff.append("Class Probs: \n"); 
+	rvBuff.append("True: " + probTrue + " False: " + probFalse +"\n");  
+	
+	rvBuff.append("Log default prob: " + logDP + " \n"); 
+	rvBuff.append("Att-Val log Probs (total atts = " + numAtts + "): "); 
+	for(int i=0; i < 2; i++){
+	    rvBuff.append("For class: " + i +"\n"); 
+	    for(int j=0; j < numAtts; j++){
+		rvBuff.append("Att " + j + " [ "); 
+		float[] vals =  classAttValProb[i][j];
+		for(int k=0; k < vals.length; k++){
+		    rvBuff.append(vals[k] + " "); 
+		}
+		rvBuff.append("]\n"); 
+	    }
+	    
+	}
+	return rvBuff.toString(); 
+    }
+    
+}
+
+public class NaiveBayes2 implements LearnerAlgI {
+    
+    private String baseName = "nbayes"; 
+    private String description = "Implements naive Bayes learning algorithm"; 
+    private AttDescVecI advi = null;
+    private int classIndex = 0; 
+    private DomDesc domDesc = null; 
+    static final int EQFREQ = 1; 
+    static final int EQWIDTH = 2; 
+    private int discretisation = EQFREQ; 
+    private int numDivs = 5; 
+    
+    
+    /** 
+     * Gets the name of the Learner algorithm. Used by the prototype manager 
+     * as a key. 
+     *
+     * @return A key representing this particular Learner Algorithm
+     */ 
+    public String name(){
+	return baseName; 
+    }
+
+    public void setClassIndex(int index){
+	classIndex = index; 
+    }
+
+    /**
+     * Clone the current object. 
+     *
+     */ 
+
+    public Object clone()
+    {
+	try {
+	    return super.clone(); 
+	}
+	catch (CloneNotSupportedException e){
+	    // Can't happen, or so the java programming book says
+	    throw new InternalError(e.toString()); 
+	}
+    }
+
+    /** 
+     * Provides a description of the LearnerAlg. This description explains
+     * what the basic idea of the learner is (i.e. the sort of shapes it
+     * tried to find). It should also explain any potential
+     * configuration options that may
+     * be used to configure the object, using the configure option. 
+     * 
+     * @return The description of this class. 
+     */ 
+
+    public String description(){
+	return description; 
+    }
+
+    public void setDomDesc(DomDesc dd){
+	domDesc = dd; 
+    }
+    
+    public void setAttDescVec(AttDescVecI adv){
+	advi = adv; 
+    }
+
+    /**
+     * Configures this instance so that parameter <i>p</i> has
+     * value <i>v</i>. 
+     *
+     * @param p the parameter to set. 
+     * @param v the value of the parameter. 
+     * @return true if the operation succeeded. 
+     *
+     */
+
+    public void setParam(String p, String v) throws InvalidParameterException
+    {
+	// Let's just use a simple parameter as an example. 
+	if(p.equals("numDivs")){
+	    try {
+		numDivs = Integer.parseInt(v); 
+	    }
+	    catch(NumberFormatException nfe){
+		throw new InvalidParameterException(p, v, "Could not parse num divs"); 
+	    }
+	}
+	if(p.equals("discretisation")){
+	    if(v.equals("equalFreq")){
+		discretisation = EQFREQ; 
+	    }
+	    else if(v.equals("equalWidth")){
+		discretisation = EQWIDTH; 
+	    }
+	}
+	else {
+	    throw new InvalidParameterException(p, v, "I was expecting exp"); 
+	}
+    }
+
+    /** 
+     *
+     * Describes any parameters used by this global extractor,
+     * to suit a particular domain. 
+     *
+     * @return A vector of parameters. 
+     */    
+    public ParamVec getParamList(){
+	ParamVec pv = new ParamVec(); 
+	pv.add(new Param("numDivs", "Number of divisions for continuous variables", "5")); 
+	pv.add(new Param("discretisation", "The way to discretise continuous values. Either equalWidth or equalFreq", "equalWidth")); 
+	return pv; 
+    }
+
+    /**
+     * Apply the feature selection algorithm
+     * 
+     */ 
+    
+    public ClassifierI learn(ClassStreamAttValVecI input){
+	//Now, let's see. 
+	Debug.dp(Debug.FN_CALLS, "Learning with Naive Bayes ..."); 
+	StreamAttValVecI streams = input.getStreamAttValVec(); 
+	AttDescVecI atts = streams.getDescription(); 
+	int numAtts = atts.size(); 
+	DiscretiserI[] discretisers = new DiscretiserI[atts.size()]; 
+	//This code likely to change in future. 
+	for(int i=0; i < numAtts; i++){
+	    if(atts.elAt(i).getDataType().getName().equals("continuous")){
+		if(discretisation == EQWIDTH){
+		    discretisers[i] = (DiscretiserI) new EqualWidthDiscretiser(); 
+		}
+		else {
+		    discretisers[i] = (DiscretiserI) new EqualFreqDiscretiser(); 
+		}
+		discretisers[i].makeDiscretisation(input, numDivs, i); 
+	    }
+	    else if(atts.elAt(i).getDataType().getName().equals("discrete")){
+		discretisers[i] = new DiscreteDiscretiser(); 
+		discretisers[i].makeDiscretisation(input, numDivs, i);
+	    }
+	    else {
+		Debug.dp(Debug.EMERGENCY, "AAARRGH! Naive bayes with wrong values"); 
+	    }
+		
+	    
+	}
+	// Now we have the discretisation, let's create a Bayes Table
+	BayesTable2 bt = new BayesTable2(domDesc, discretisers, input, classIndex); 
+	return new NBClassifier2(bt); 
+	
+    }
+    
+}

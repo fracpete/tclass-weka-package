@@ -1,0 +1,18 @@
+globalcalc {
+ global V-mean mean {
+    channel V
+  } 
+}
+metafeatures {
+  metafeature V-loudrun rle {
+    minrun "1"
+    limitvalues " H "
+  }
+}
+
+segmentation {
+  segmenter V-loudrun em {
+    metafeature V-loudrun 
+    ignoreclass true
+  }
+}

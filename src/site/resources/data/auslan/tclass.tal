@@ -1,0 +1,1323 @@
+globalcalc {
+global lx-mean mean {
+  channel lx 
+}
+global ly-mean mean {
+  channel ly
+}
+global lz-mean mean {
+  channel lz
+}
+global lroll-mean mean {
+  channel lroll
+}
+global lpitch-mean mean {
+  channel lpitch 
+}
+global lyaw-mean mean {
+  channel lyaw
+}
+global lthumb-mean mean {
+  channel lthumb
+}
+global lfore-mean mean {
+  channel lfore
+}
+global lmiddle-mean mean {
+  channel lmiddle
+}
+global lring-mean mean {
+  channel lring
+}
+global llittle-mean mean {
+  channel llittle
+}
+global rx-mean mean {
+  channel rx 
+}
+global ry-mean mean {
+  channel ry
+}
+global rz-mean mean {
+  channel rz
+}
+global rroll-mean mean {
+  channel rroll
+}
+global rpitch-mean mean {
+  channel rpitch 
+}
+global ryaw-mean mean {
+  channel ryaw
+}
+global rthumb-mean mean {
+  channel rthumb
+}
+global rfore-mean mean {
+  channel rfore
+}
+global rmiddle-mean mean {
+  channel rmiddle
+}
+global rring-mean mean {
+  channel rring
+}
+global rlittle-mean mean {
+  channel rlittle
+}
+
+global lx-max max {
+  channel lx 
+}
+global ly-max max {
+  channel ly
+}
+global lz-max max {
+  channel lz
+}
+global lroll-max max {
+  channel lroll
+}
+global lpitch-max max {
+  channel lpitch 
+}
+global lyaw-max max {
+  channel lyaw
+}
+global lthumb-max max {
+  channel lthumb
+}
+global lfore-max max {
+  channel lfore
+}
+global lmiddle-max max {
+  channel lmiddle
+}
+global lring-max max {
+  channel lring
+}
+global llittle-max max {
+  channel llittle
+}
+global rx-max max {
+  channel rx 
+}
+global ry-max max {
+  channel ry
+}
+global rz-max max {
+  channel rz
+}
+global rroll-max max {
+  channel rroll
+}
+global rpitch-max max {
+  channel rpitch 
+}
+global ryaw-max max {
+  channel ryaw
+}
+global rthumb-max max {
+  channel rthumb
+}
+global rfore-max max {
+  channel rfore
+}
+global rmiddle-max max {
+  channel rmiddle
+}
+global rring-max max {
+  channel rring
+}
+global rlittle-max max {
+  channel rlittle
+}
+
+global lx-min min {
+  channel lx 
+}
+global ly-min min {
+  channel ly
+}
+global lz-min min {
+  channel lz
+}
+global lroll-min min {
+  channel lroll
+}
+global lpitch-min min {
+  channel lpitch 
+}
+global lyaw-min min {
+  channel lyaw
+}
+global lthumb-min min {
+  channel lthumb
+}
+global lfore-min min {
+  channel lfore
+}
+global lmiddle-min min {
+  channel lmiddle
+}
+global lring-min min {
+  channel lring
+}
+global llittle-min min {
+  channel llittle
+}
+global rx-min min {
+  channel rx 
+}
+global ry-min min {
+  channel ry
+}
+global rz-min min {
+  channel rz
+}
+global rroll-min min {
+  channel rroll
+}
+global rpitch-min min {
+  channel rpitch 
+}
+global ryaw-min min {
+  channel ryaw
+}
+global rthumb-min min {
+  channel rthumb
+}
+global rfore-min min {
+  channel rfore
+}
+global rmiddle-min min {
+  channel rmiddle
+}
+global rring-min min {
+  channel rring
+}
+global rlittle-min min {
+  channel rlittle
+}
+
+}
+
+metafeatures
+{
+metafeature lx-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lx 
+}
+metafeature ly-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ly
+}
+metafeature lz-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lz
+}
+metafeature lroll-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lroll
+}
+metafeature lpitch-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lpitch 
+}
+metafeature lyaw-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lyaw
+}
+metafeature lthumb-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lthumb
+}
+metafeature lfore-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lfore
+}
+metafeature lmiddle-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lmiddle
+}
+metafeature lring-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lring
+}
+metafeature llittle-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel llittle
+}
+metafeature rx-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rx 
+}
+metafeature ry-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ry
+}
+metafeature rz-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rz
+}
+metafeature rroll-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rroll
+}
+metafeature rpitch-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rpitch 
+}
+metafeature ryaw-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ryaw
+}
+metafeature rthumb-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rthumb
+}
+metafeature rfore-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rfore
+}
+metafeature rmiddle-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rmiddle
+}
+metafeature rring-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rring
+}
+metafeature rlittle-inc inc {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rlittle
+}
+
+metafeature lx-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lx 
+}
+metafeature ly-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ly
+}
+metafeature lz-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lz
+}
+metafeature lroll-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lroll
+}
+metafeature lpitch-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lpitch 
+}
+metafeature lyaw-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lyaw
+}
+metafeature lthumb-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lthumb
+}
+metafeature lfore-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lfore
+}
+metafeature lmiddle-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lmiddle
+}
+metafeature lring-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lring
+}
+metafeature llittle-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel llittle
+}
+metafeature rx-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rx 
+}
+metafeature ry-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ry
+}
+metafeature rz-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rz
+}
+metafeature rroll-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rroll
+}
+metafeature rpitch-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rpitch 
+}
+metafeature ryaw-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ryaw
+}
+metafeature rthumb-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rthumb
+}
+metafeature rfore-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rfore
+}
+metafeature rmiddle-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rmiddle
+}
+metafeature rring-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rring
+}
+metafeature rlittle-dec dec {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rlittle
+}
+
+metafeature lx-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lx 
+}
+metafeature ly-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ly
+}
+metafeature lz-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lz
+}
+metafeature lroll-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lroll
+}
+metafeature lpitch-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lpitch 
+}
+metafeature lyaw-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lyaw
+}
+metafeature lthumb-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lthumb
+}
+metafeature lfore-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lfore
+}
+metafeature lmiddle-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lmiddle
+}
+metafeature lring-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lring
+}
+metafeature llittle-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel llittle
+}
+metafeature rx-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rx 
+}
+metafeature ry-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ry
+}
+metafeature rz-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rz
+}
+metafeature rroll-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rroll
+}
+metafeature rpitch-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rpitch 
+}
+metafeature ryaw-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ryaw
+}
+metafeature rthumb-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rthumb
+}
+metafeature rfore-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rfore
+}
+metafeature rmiddle-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rmiddle
+}
+metafeature rring-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rring
+}
+metafeature rlittle-lmax lmax {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rlittle
+}
+
+metafeature lx-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lx 
+}
+metafeature ly-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ly
+}
+metafeature lz-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lz
+}
+metafeature lroll-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lroll
+}
+metafeature lpitch-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lpitch 
+}
+metafeature lyaw-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lyaw
+}
+metafeature lthumb-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lthumb
+}
+metafeature lfore-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lfore
+}
+metafeature lmiddle-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lmiddle
+}
+metafeature lring-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lring
+}
+metafeature llittle-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel llittle
+}
+metafeature rx-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rx 
+}
+metafeature ry-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ry
+}
+metafeature rz-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rz
+}
+metafeature rroll-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rroll
+}
+metafeature rpitch-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rpitch 
+}
+metafeature ryaw-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ryaw
+}
+metafeature rthumb-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rthumb
+}
+metafeature rfore-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rfore
+}
+metafeature rmiddle-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rmiddle
+}
+metafeature rring-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rring
+}
+metafeature rlittle-lmin lmin {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rlittle
+}
+
+metafeature lx-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lx 
+}
+metafeature ly-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ly
+}
+metafeature lz-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lz
+}
+metafeature lroll-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lroll
+}
+metafeature lpitch-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lpitch 
+}
+metafeature lyaw-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lyaw
+}
+metafeature lthumb-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lthumb
+}
+metafeature lfore-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lfore
+}
+metafeature lmiddle-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lmiddle
+}
+metafeature lring-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel lring
+}
+metafeature llittle-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel llittle
+}
+metafeature rx-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rx 
+}
+metafeature ry-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ry
+}
+metafeature rz-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rz
+}
+metafeature rroll-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rroll
+}
+metafeature rpitch-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rpitch 
+}
+metafeature ryaw-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel ryaw
+}
+metafeature rthumb-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rthumb
+}
+metafeature rfore-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rfore
+}
+metafeature rmiddle-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rmiddle
+}
+metafeature rring-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rring
+}
+metafeature rlittle-plat plat {
+  useRelativeTime true
+   useRelativeHeight true
+   channel rlittle
+}
+}
+segmentation {
+segmenter lx-inc directed {
+   numTrials "1000"
+  dispMeasure chisquare
+   metafeature lx-inc
+}
+segmenter ly-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ly-inc
+}
+segmenter lz-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lz-inc
+}
+segmenter lroll-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lroll-inc
+}
+segmenter lpitch-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lpitch-inc
+}
+segmenter lyaw-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare        
+  metafeature lyaw-inc
+}
+segmenter lthumb-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lthumb-inc
+}
+segmenter lfore-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lfore-inc
+}
+segmenter lmiddle-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lmiddle-inc
+}
+segmenter lring-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lring-inc
+}
+segmenter llittle-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature llittle-inc
+}
+segmenter rx-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+   metafeature rx-inc
+}
+segmenter ry-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ry-inc
+}
+segmenter rz-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rz-inc
+}
+segmenter rroll-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rroll-inc
+}
+segmenter rpitch-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rpitch-inc
+}
+segmenter ryaw-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ryaw-inc
+}
+segmenter rthumb-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rthumb-inc
+}
+segmenter rfore-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rfore-inc
+}
+segmenter rmiddle-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rmiddle-inc
+}
+segmenter rring-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rring-inc
+}
+segmenter rlittle-inc directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rlittle-inc
+}
+
+
+segmenter lx-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+   metafeature lx-dec
+}
+segmenter ly-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ly-dec
+}
+segmenter lz-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lz-dec
+}
+segmenter lroll-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lroll-dec
+}
+segmenter lpitch-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lpitch-dec
+}
+segmenter lyaw-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lyaw-dec
+}
+segmenter lthumb-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lthumb-dec
+}
+segmenter lfore-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lfore-dec
+}
+segmenter lmiddle-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lmiddle-dec
+}
+segmenter lring-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lring-dec
+}
+segmenter llittle-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature llittle-dec
+}
+
+segmenter rx-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+   metafeature rx-dec
+}
+segmenter ry-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ry-dec
+}
+segmenter rz-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rz-dec
+}
+segmenter rroll-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rroll-dec
+}
+segmenter rpitch-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rpitch-dec
+}
+segmenter ryaw-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ryaw-dec
+}
+segmenter rthumb-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rthumb-dec
+}
+segmenter rfore-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rfore-dec
+}
+segmenter rmiddle-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rmiddle-dec
+}
+segmenter rring-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rring-dec
+}
+segmenter rlittle-dec directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rlittle-dec
+}
+
+segmenter lx-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+   metafeature lx-lmax
+}
+segmenter ly-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ly-lmax
+}
+segmenter lz-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lz-lmax
+}
+segmenter lroll-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lroll-lmax
+}
+segmenter lpitch-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lpitch-lmax
+}
+segmenter lyaw-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lyaw-lmax
+}
+segmenter lthumb-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lthumb-lmax
+}
+segmenter lfore-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lfore-lmax
+}
+segmenter lmiddle-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lmiddle-lmax
+}
+segmenter lring-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lring-lmax
+}
+segmenter llittle-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature llittle-lmax
+}
+
+segmenter rx-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+   metafeature rx-lmax
+}
+segmenter ry-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ry-lmax
+}
+segmenter rz-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rz-lmax
+}
+segmenter rroll-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rroll-lmax
+}
+segmenter rpitch-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rpitch-lmax
+}
+segmenter ryaw-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ryaw-lmax
+}
+segmenter rthumb-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rthumb-lmax
+}
+segmenter rfore-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rfore-lmax
+}
+segmenter rmiddle-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rmiddle-lmax
+}
+segmenter rring-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rring-lmax
+}
+segmenter rlittle-lmax directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rlittle-lmax
+}
+
+segmenter lx-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+   metafeature lx-lmin
+}
+segmenter ly-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ly-lmin
+}
+segmenter lz-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lz-lmin
+}
+segmenter lroll-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lroll-lmin
+}
+segmenter lpitch-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lpitch-lmin
+}
+segmenter lyaw-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lyaw-lmin
+}
+segmenter lthumb-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lthumb-lmin
+}
+segmenter lfore-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lfore-lmin
+}
+segmenter lmiddle-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lmiddle-lmin
+}
+segmenter lring-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lring-lmin
+}
+segmenter llittle-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature llittle-lmin
+}
+
+segmenter rx-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+   metafeature rx-lmin
+}
+segmenter ry-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ry-lmin
+}
+segmenter rz-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rz-lmin
+}
+segmenter rroll-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rroll-lmin
+}
+segmenter rpitch-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rpitch-lmin
+}
+segmenter ryaw-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ryaw-lmin
+}
+segmenter rthumb-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rthumb-lmin
+}
+segmenter rfore-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rfore-lmin
+}
+segmenter rmiddle-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rmiddle-lmin
+}
+segmenter rring-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rring-lmin
+}
+segmenter rlittle-lmin directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rlittle-lmin
+}
+
+segmenter lx-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+   metafeature lx-plat
+}
+segmenter ly-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ly-plat
+}
+segmenter lz-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lz-plat
+}
+segmenter lroll-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lroll-plat
+}
+segmenter lpitch-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lpitch-plat
+}
+segmenter lyaw-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lyaw-plat
+}
+segmenter lthumb-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lthumb-plat
+}
+segmenter lfore-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lfore-plat
+}
+segmenter lmiddle-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lmiddle-plat
+}
+segmenter lring-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature lring-plat
+}
+segmenter llittle-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature llittle-plat
+}
+
+segmenter rx-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+   metafeature rx-plat
+}
+segmenter ry-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ry-plat
+}
+segmenter rz-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rz-plat
+}
+segmenter rroll-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rroll-plat
+}
+segmenter rpitch-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rpitch-plat
+}
+segmenter ryaw-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature ryaw-plat
+}
+segmenter rthumb-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rthumb-plat
+}
+segmenter rfore-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rfore-plat
+}
+segmenter rmiddle-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rmiddle-plat
+}
+segmenter rring-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rring-plat
+}
+segmenter rlittle-plat directed {
+  numTrials "1000"
+  dispMeasure chisquare
+  metafeature rlittle-plat
+}
+
+}
