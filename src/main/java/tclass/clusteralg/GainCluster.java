@@ -1,3 +1,18 @@
+/*
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /**
  * An algorithm that does clustering based on the gain that is to be
  * received on using these particular centroids. It does a random
@@ -22,9 +37,24 @@
  */
       
 package tclass.clusteralg;   
-import tclass.*; 
-import tclass.util.*; 
-import java.util.*; 
+import java.util.Random;
+
+import tclass.ClassStreamEventsVecI;
+import tclass.ClassificationVecI;
+import tclass.ClusterAlgI;
+import tclass.ClusterVec;
+import tclass.ClusterVecI;
+import tclass.DomDesc;
+import tclass.EventDescI;
+import tclass.EventDescVecI;
+import tclass.EventI;
+import tclass.EventVecI;
+import tclass.InvalidParameterException;
+import tclass.Param;
+import tclass.ParamVec;
+import tclass.StreamEventsVecI;
+import tclass.util.Debug;
+import tclass.util.FastMath;
 
 // import weka.core.Statistics; 
 
@@ -89,6 +119,7 @@ public class GainCluster implements ClusterAlgI {
      *
      */     
 
+    @Override
     public Object clone()
     {
         try {

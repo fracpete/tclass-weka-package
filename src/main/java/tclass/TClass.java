@@ -35,10 +35,12 @@ import tclass.clusteralg.GClust;
 import tclass.util.Debug;
 import weka.attributeSelection.BestFirst;
 import weka.attributeSelection.CfsSubsetEval;
+import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
 import weka.core.Instances;
 import weka.core.Utils;
-import weka.filters.AttributeFilter;
+import weka.filters.Filter;
+import weka.filters.unsupervised.attribute.Remove;
 
 public class TClass {
     // Ok. What we are going to do is to separate the learning task in 
@@ -49,7 +51,7 @@ public class TClass {
     String trainDataFile = "tclass.tsl"; 
     String testDataFile = "tclass.ttl"; 
     String settingsFile = "tclass.tal"; 
-    String learnerStuff = "weka.classifiers.j48.J48"; 
+    String learnerStuff = weka.classifiers.trees.J48.class.getName(); 
     boolean featureSel = false; 
     boolean makeDesc = false; 
     boolean trainResults = false; 
@@ -206,7 +208,7 @@ public class TClass {
         }        
         String classifierName = classifierSpec[0];
         classifierSpec[0] = "";
-        Classifier learner = Classifier.forName(classifierName, classifierSpec);
+        Classifier learner = AbstractClassifier.forName(classifierName, classifierSpec);
         Debug.dp(Debug.PROGRESS, "PROGRESS: Beginning format conversion for class "); 
         Instances  data = WekaBridge.makeInstances(trainAtts, "Train ");
         Debug.dp(Debug.PROGRESS, "PROGRESS: Conversion complete. Starting learning");    
@@ -226,11 +228,11 @@ public class TClass {
                 featureString += ("last"); 
                 System.err.println(featureString); 
                // Now apply the filter. 
-                AttributeFilter af = new AttributeFilter(); 
+                Remove af = new Remove(); 
                 af.setInvertSelection(true); 
                 af.setAttributeIndices(featureString); 
-                af.inputFormat(data); 
-                data = af.useFilter(data, af); 
+                af.setInputFormat(data); 
+                data = Filter.useFilter(data, af); 
             }
         learner.buildClassifier(data); 
         Debug.dp(Debug.PROGRESS, "Learnt classifier: \n" + learner.toString()); 
@@ -341,11 +343,11 @@ public class TClass {
             }
             featureString += "last"; 
             // Now apply the filter. 
-            AttributeFilter af = new AttributeFilter(); 
+            Remove af = new Remove(); 
             af.setInvertSelection(true); 
             af.setAttributeIndices(featureString); 
-            af.inputFormat(data); 
-            data = af.useFilter(data, af); 
+            af.setInputFormat(data); 
+            data = Filter.useFilter(data, af); 
         }
         for(int j=0; j < numTestStreams; j++){
             wekaClassifier.classify(data.instance(j), classns.elAt(j));

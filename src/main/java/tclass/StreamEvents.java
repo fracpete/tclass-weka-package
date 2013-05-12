@@ -1,3 +1,18 @@
+/*
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /**
   * A store of all the events associated with a stream. For each channel, 
   * an EventVecI can be requested. Note!! Stream events are defined by 
@@ -69,6 +84,7 @@ public class StreamEvents implements StreamEventsI {
 	return retval; 
     }
     
+    @Override
     public String toString(){
 	int size = eventVecs.length; 
 	String retval = "StreamEvents has " + size + " elements. They are: \n";

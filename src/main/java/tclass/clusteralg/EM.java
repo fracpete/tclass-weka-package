@@ -1,29 +1,38 @@
 /*
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
  *    EM.java
  *    Copyright (C) 1999 Mark Hall
- *
- *    This program is free software; you can redistribute it and/or modify
- *    it under the terms of the GNU General Public License as published by
- *    the Free Software Foundation; either version 2 of the License, or
- *    (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU General Public License for more details.
- *
- *    You should have received a copy of the GNU General Public License
- *    along with this program; if not, write to the Free Software
- *    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 package  tclass.clusteralg; 
 
-import  java.io.*;
-import  java.util.*;
-import  weka.core.*;
-import  weka.estimators.*;
-import tclass.util.FastMath; 
-import weka.clusterers.*; 
+import java.util.Enumeration;
+import java.util.Random;
+import java.util.Vector;
+
+import tclass.util.FastMath;
+import weka.clusterers.AbstractClusterer;
+import weka.clusterers.ClusterEvaluation;
+import weka.core.Instance;
+import weka.core.Instances;
+import weka.core.Option;
+import weka.core.OptionHandler;
+import weka.core.Utils;
+import weka.estimators.DiscreteEstimator;
+import weka.estimators.Estimator;
 /**
  * Simple EM (estimation maximisation) class. <p>
  * 
@@ -52,7 +61,7 @@ import weka.clusterers.*;
  * @version $Revision: 1.1.1.1 $
  */
 public class EM
-    extends DistributionClusterer
+    extends AbstractClusterer
     implements OptionHandler
 {
 
@@ -610,6 +619,7 @@ public class EM
     /**
    * Outputs the generated clusters into a string.
    */
+    @Override
     public String toString () {
         StringBuffer text = new StringBuffer();
         text.append("\nEM\n==\n");
@@ -785,7 +795,8 @@ public class EM
          * @exception Exception if number of clusters could not be returned
          * successfully
          */
-        public int numberOfClusters ()
+        @Override
+	public int numberOfClusters ()
             throws Exception
             {
                 if (m_num_clusters == -1) {
@@ -805,7 +816,8 @@ public class EM
          * @exception Exception if instance could not be classified
          * successfully
          */
-        public void buildClusterer (Instances data)
+        @Override
+	public void buildClusterer (Instances data)
             throws Exception
             {
                 if (data.checkForStringAttributes()) {
@@ -828,7 +840,8 @@ public class EM
          * @exception Exception if distribution could not be 
          * computed successfully
          */
-        public double[] distributionForInstance (Instance inst)
+        @Override
+	public double[] distributionForInstance (Instance inst)
             throws Exception
             {
                 int i, j;

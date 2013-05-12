@@ -1,3 +1,18 @@
+/*
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /**
   * An implementation of an Example data type. Very simple. 
   *
@@ -7,8 +22,11 @@
   */
 
 package tclass.datatype;   
-import tclass.*; 
-import tclass.util.*; 
+import tclass.DataTypeI;
+import tclass.InvalidParameterException;
+import tclass.Param;
+import tclass.ParamVec;
+import tclass.util.Debug;
 
 public class Continuous implements DataTypeI {
     
@@ -29,6 +47,7 @@ public class Continuous implements DataTypeI {
      *
      */ 
     
+    @Override
     public Object clone()
     {
 	try {
@@ -105,6 +124,7 @@ public class Continuous implements DataTypeI {
      * 
      */ 
 
+    @Override
     public String toString(){
 	String retval = "cts: metric = "; 
 	if(distance == SQUARE)

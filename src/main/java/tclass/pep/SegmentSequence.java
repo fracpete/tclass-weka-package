@@ -1,8 +1,25 @@
+/*
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 
 package tclass.pep;   
-import tclass.*; 
-import tclass.util.*; 
-import java.util.*; 
+import java.util.Vector;
+
+import tclass.EventVec;
+import tclass.util.Debug;
+import tclass.util.FastMath;
 
 public class SegmentSequence implements Cloneable {
     private static final float ln2 = (float) Math.log(2.0); 
@@ -24,6 +41,7 @@ public class SegmentSequence implements Cloneable {
      * Clone the current object. 
      *
      */ 
+    @Override
     public Object clone()
     {
         try {
@@ -67,6 +85,7 @@ public class SegmentSequence implements Cloneable {
         
     }
     
+    @Override
     public String toString(){
         int size = size(); 
         String retval = "SegSeq has " + size + " segments. Total bits: " + getNumBits() +". These  are: "; 

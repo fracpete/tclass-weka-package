@@ -1,7 +1,24 @@
+/*
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package tclass;   
-import java.util.*; 
-import weka.core.*; 
-import tclass.util.*; 
+import weka.core.Attribute;
+import weka.core.DenseInstance;
+import weka.core.FastVector;
+import weka.core.Instance;
+import weka.core.Instances;
 /**
   * Class for converting from our interna formats to Weka's. 
   * I'd rather keep things as separate as possible. 
@@ -54,7 +71,7 @@ public class WekaBridge {
             int numEvents = evi.size(); 
             for(int j=0; j < numEvents; j++){
                 // System.out.println("Adding event " + j + " of stream " + i); 
-                Instance thisInst = new Instance(atts.size()); 
+                Instance thisInst = new DenseInstance(atts.size()); 
                 thisInst.setDataset(retval); 
                 EventI thisEvent = evi.elAt(j); 
                 
@@ -78,7 +95,7 @@ public class WekaBridge {
         for(int i=(ignoreTime ? 1: 0); i < numParams; i++){
             eventdbl[i-(ignoreTime ? 1: 0)] = (double) ei.valOf(i) ; 
         }
-        Instance retval = new Instance(1.0, eventdbl); 
+        Instance retval = new DenseInstance(1.0, eventdbl); 
         return retval; 
     }
     
@@ -94,7 +111,7 @@ public class WekaBridge {
         retval.setClassIndex(numAtts); // Set class to last attribute. 
 
         for(int i=0; i < numInstances; i++){
-            Instance thisInst = new Instance(numAtts+1); // To include the class.  
+            Instance thisInst = new DenseInstance(numAtts+1); // To include the class.  
             thisInst.setDataset(retval); 
             StreamAttValI thisStream = origData.elAt(i); 
             for(int j=0; j < numAtts; j++){

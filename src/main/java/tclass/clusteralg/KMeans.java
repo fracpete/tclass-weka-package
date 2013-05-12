@@ -1,18 +1,51 @@
+/*
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /**
   * This is a simple k means clustering algorithm.
   * Auto numclasses works out the average number of events per event vec. 
-  * 
-  *
-  *
   * 
   * @author Waleed Kadous
   * @version $Id: KMeans.java,v 1.1.1.1 2002/06/28 07:36:16 waleed Exp $
   */
 
 package tclass.clusteralg;   
-import tclass.*; 
-import tclass.util.*; 
-import java.util.*; 
+import java.util.Vector;
+
+import tclass.ClassStreamEventsVecI;
+import tclass.ClassificationVecI;
+import tclass.ClusterAlgI;
+import tclass.ClusterI;
+import tclass.ClusterMem;
+import tclass.ClusterVecI;
+import tclass.DomDesc;
+import tclass.Event;
+import tclass.EventDescI;
+import tclass.EventDescVecI;
+import tclass.EventI;
+import tclass.EventVec;
+import tclass.EventVecI;
+import tclass.InvalidParameterException;
+import tclass.Param;
+import tclass.ParamVec;
+import tclass.StreamAttVal;
+import tclass.StreamAttValI;
+import tclass.StreamEventsI;
+import tclass.StreamEventsVecI;
+import tclass.StreamI;
+import tclass.util.Debug;
 
 
 class KMClusterVec implements ClusterVecI {
@@ -33,6 +66,7 @@ class KMClusterVec implements ClusterVecI {
      *
      */ 
 
+    @Override
     public Object clone()
     {
 	try {
@@ -95,6 +129,7 @@ class KMCluster implements ClusterI {
      *
      */ 
     
+    @Override
     public Object clone()
     {
 	try {
@@ -119,6 +154,7 @@ class KMCluster implements ClusterI {
 	return "Cluster centroid is: " + centroid.toString() +"\n"; 
     }
     
+    @Override
     public String toString(){
 	return getDescription(); 
     }
@@ -256,6 +292,7 @@ public class KMeans implements ClusterAlgI {
      *
      */ 
     
+    @Override
     public Object clone()
     {
 	try {

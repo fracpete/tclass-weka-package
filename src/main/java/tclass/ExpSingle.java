@@ -1,3 +1,18 @@
+/*
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /**
  *  Single classifier solution. That is to say, we cluster all the instances
  *  using the same clustering algorithms. 
@@ -8,16 +23,18 @@
  */
 package tclass;  
 
-import tclass.clusteralg.*; 
-import tclass.util.*; 
-// import tclass.learnalg.*; 
-import weka.classifiers.*; 
-import weka.classifiers.j48.*; 
-import weka.attributeSelection.*; 
-import weka.filters.*; 
-import weka.core.*; 
-import java.io.*; 
-import java.util.*; 
+import java.util.StringTokenizer;
+
+import tclass.clusteralg.GClust;
+import tclass.util.Debug;
+import weka.attributeSelection.BestFirst;
+import weka.attributeSelection.CfsSubsetEval;
+import weka.classifiers.AbstractClassifier;
+import weka.classifiers.Classifier;
+import weka.core.Instances;
+import weka.core.Utils;
+import weka.filters.Filter;
+import weka.filters.unsupervised.attribute.Remove;
 
 
 public class ExpSingle {
@@ -33,7 +50,7 @@ public class ExpSingle {
     // String evExtractDesc = "test._ee";
     String evClusterDesc = "test._ec"; 
     String settingsFile = "test.tal"; 
-    String learnerStuff = "weka.classifiers.j48.J48"; 
+    String learnerStuff = weka.classifiers.trees.J48.class.getName(); 
     boolean featureSel = false; 
     boolean makeDesc = false; 
     boolean trainResults = false; 
@@ -199,7 +216,7 @@ public class ExpSingle {
         }        
         String classifierName = classifierSpec[0];
         classifierSpec[0] = "";
-        Classifier learner = Classifier.forName(classifierName, classifierSpec);
+        Classifier learner = AbstractClassifier.forName(classifierName, classifierSpec);
         Debug.dp(Debug.PROGRESS, "PROGRESS: Beginning format conversion for class "); 
         Instances  data = WekaBridge.makeInstances(trainAtts, "Train ");
         Debug.dp(Debug.PROGRESS, "PROGRESS: Conversion complete. Starting learning");    
@@ -219,11 +236,11 @@ public class ExpSingle {
                 featureString += ("last"); 
                 System.err.println(featureString); 
                // Now apply the filter. 
-                AttributeFilter af = new AttributeFilter(); 
+                Remove af = new Remove(); 
                 af.setInvertSelection(true); 
                 af.setAttributeIndices(featureString); 
-                af.inputFormat(data); 
-                data = af.useFilter(data, af); 
+                af.setInputFormat(data); 
+                data = Filter.useFilter(data, af); 
             }
         learner.buildClassifier(data); 
         mem("POSTLEARNER"); 
@@ -272,7 +289,7 @@ public class ExpSingle {
                     String chan = name.substring(0, dashPos);
                     String evType = name.substring(dashPos+1, undPos); 
                     EventDescI edi = clust.eventDesc(); 
-                    if(qual == " HAS NO " && thisExp.learnerStuff.startsWith("weka.classifiers.j48.J48")){
+                    if(qual == " HAS NO " && thisExp.learnerStuff.startsWith(weka.classifiers.trees.J48.class.getName())){
                         System.out.print("OTHERWISE"); 
                     }
                     else {
@@ -350,11 +367,11 @@ public class ExpSingle {
             }
             featureString += "last"; 
             // Now apply the filter. 
-            AttributeFilter af = new AttributeFilter(); 
+            Remove af = new Remove(); 
             af.setInvertSelection(true); 
             af.setAttributeIndices(featureString); 
-            af.inputFormat(data); 
-            data = af.useFilter(data, af); 
+            af.setInputFormat(data); 
+            data = Filter.useFilter(data, af); 
         }
         for(int j=0; j < numTestStreams; j++){
             wekaClassifier.classify(data.instance(j), classns.elAt(j));

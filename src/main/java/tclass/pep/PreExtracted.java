@@ -1,3 +1,18 @@
+/*
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /**
   * A code for preextracted features that actually live in the
   * data file. A hack that allows pre-extracted metafeatures
@@ -12,7 +27,19 @@
   */
 
 package tclass.pep;   
-import tclass.*; 
+import tclass.ChannelDesc;
+import tclass.DataTypeMgr;
+import tclass.DomDesc;
+import tclass.Event;
+import tclass.EventDesc;
+import tclass.EventDescI;
+import tclass.EventVec;
+import tclass.EventVecI;
+import tclass.InvalidParameterException;
+import tclass.Param;
+import tclass.ParamVec;
+import tclass.PepI;
+import tclass.StreamI;
 
 public class PreExtracted implements PepI {
 
@@ -42,6 +69,7 @@ public class PreExtracted implements PepI {
         // 
     }
 
+    @Override
     public Object clone()
     {
         try {

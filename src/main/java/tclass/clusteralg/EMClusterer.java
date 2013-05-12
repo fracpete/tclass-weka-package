@@ -1,3 +1,18 @@
+/*
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /**
   * This is an example of a clustering algorithm, in other words, 
   * what we expect our clustering algorithms to be able to do. 
@@ -8,10 +23,24 @@
   */
 
 package tclass.clusteralg;   
-import tclass.*; 
-import tclass.util.*; 
-import weka.clusterers.*; 
-import weka.core.*; 
+import tclass.ClassStreamEventsVecI;
+import tclass.ClusterAlgI;
+import tclass.ClusterI;
+import tclass.ClusterMem;
+import tclass.ClusterVecI;
+import tclass.DomDesc;
+import tclass.EventDescI;
+import tclass.EventDescVecI;
+import tclass.EventI;
+import tclass.EventVecI;
+import tclass.InvalidParameterException;
+import tclass.Param;
+import tclass.ParamVec;
+import tclass.StreamEventsI;
+import tclass.StreamI;
+import tclass.WekaBridge;
+import weka.core.Instance;
+import weka.core.Instances;
 
 public class  EMClusterer implements ClusterAlgI { 
     
@@ -38,6 +67,7 @@ public class  EMClusterer implements ClusterAlgI {
      *
      */     
 
+    @Override
     public Object clone()
     {
 	try {
@@ -264,6 +294,7 @@ class EMClusterVec implements ClusterVecI {
      *
      */ 
 
+    @Override
     public Object clone()
     {
 	try {
@@ -308,6 +339,7 @@ class EMCluster implements ClusterI {
         return parent.getClusterDesc(clusterIndex); 
     }
 
+    @Override
     public String toString(){
         return myName + " " + parent.getClusterDesc(clusterIndex); 
     }
@@ -327,6 +359,7 @@ class EMCluster implements ClusterI {
     }
 
 
+    @Override
     public Object clone()
     {
 	try {

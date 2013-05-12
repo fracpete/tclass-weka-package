@@ -1,3 +1,18 @@
+/*
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /**
  * This is a "hack" class. It's just to help me test out some ideas. 
  * I'm running out of time for this conference and I'm really trying
@@ -8,14 +23,14 @@
  */
 
 package tclass;   
-import tclass.util.*; 
-// import tclass.learnalg.*; 
-import weka.classifiers.*; 
-import weka.classifiers.j48.*; 
-import weka.attributeSelection.*; 
-import weka.filters.*; 
-import weka.core.*; 
-import java.io.*; 
+import tclass.util.Debug;
+import weka.attributeSelection.BestFirst;
+import weka.attributeSelection.CfsSubsetEval;
+import weka.classifiers.trees.J48;
+import weka.core.Instance;
+import weka.core.Instances;
+import weka.filters.Filter;
+import weka.filters.unsupervised.attribute.Remove;
 
 
 class DTClassifier {
@@ -283,11 +298,11 @@ public class ExpDT_TC2  {
                 featureString += ("last"); 
                 System.out.println(featureString); 
                // Now apply the filter. 
-                AttributeFilter af = new AttributeFilter(); 
+                Remove af = new Remove(); 
                 af.setInvertSelection(true); 
                 af.setAttributeIndices(featureString); 
-                af.inputFormat(data); 
-                data = af.useFilter(data, af); 
+                af.setInputFormat(data); 
+                data = Filter.useFilter(data, af); 
             }
             
             dtLearners[i].buildClassifier(data); 
@@ -348,11 +363,11 @@ public class ExpDT_TC2  {
                 }
                 featureString += "last"; 
                 // Now apply the filter. 
-                AttributeFilter af = new AttributeFilter(); 
+                Remove af = new Remove(); 
                 af.setInvertSelection(true); 
                 af.setAttributeIndices(featureString); 
-                af.inputFormat(data); 
-                data = af.useFilter(data, af); 
+                af.setInputFormat(data); 
+                data = Filter.useFilter(data, af); 
             }
             for(int j=0; j < numTestStreams; j++){
                 dtClassifiers[i].classify(data.instance(j), classns[i].elAt(j));

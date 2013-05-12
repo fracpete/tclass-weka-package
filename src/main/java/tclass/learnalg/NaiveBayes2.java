@@ -1,3 +1,18 @@
+/*
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /**
  * Implements a naive Bayes learning algorithm. 
  *
@@ -8,9 +23,20 @@
 
 package tclass.learnalg;   
 
-import tclass.*; 
-import tclass.util.*; 
-import tclass.datatype.*; 
+import tclass.AttDescVecI;
+import tclass.ClassDescVecI;
+import tclass.ClassStreamAttValVecI;
+import tclass.ClassificationI;
+import tclass.ClassificationVecI;
+import tclass.ClassifierI;
+import tclass.DomDesc;
+import tclass.InvalidParameterException;
+import tclass.LearnerAlgI;
+import tclass.Param;
+import tclass.ParamVec;
+import tclass.StreamAttValI;
+import tclass.StreamAttValVecI;
+import tclass.util.Debug;
 
 //Note: We only discretise continuous values, I guess
  
@@ -59,6 +85,7 @@ class NBClassifier2 implements ClassifierI {
 
     }
 
+    @Override
     public String toString(){
 	return ("Naive Bayes Learner. Table: \n" + bt.toString()); 
     }
@@ -189,6 +216,7 @@ class BayesTable2 {
 	return retval; 
     }
     
+    @Override
     public String toString(){
 	StringBuffer rvBuff = new StringBuffer(1000); 
 	ClassDescVecI cdv = domDesc.getClassDescVec(); 
@@ -246,6 +274,7 @@ public class NaiveBayes2 implements LearnerAlgI {
      *
      */ 
 
+    @Override
     public Object clone()
     {
 	try {
