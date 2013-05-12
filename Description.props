@@ -2,7 +2,7 @@
 # 
 
 # Package name (required)
-PackageName=collective-classification
+PackageName=tclass
 
 # Version (required)
 Version=2013.5.13
@@ -29,10 +29,10 @@ License=GPL 3.0
 Description=TClass is a program for classifying multivariate time series.
 
 # Package URL for obtaining the package archive (required)
-PackageURL=
+PackageURL=https://tclass.googlecode.com/files/tclass-2013.5.13.zip
 
 # URL for further information
-URL=
+URL=http://code.google.com/p/tclass/
 
 # Enhances various other packages ?
 Enhances=
