@@ -10,7 +10,7 @@
 
   <name>tclass</name>
   <description>TClass is a program for classifying multivariate time series.</description>
-  <url>https://code.google.com/p/tclass/</url>
+  <url>https://github.com/fracpete/tclass</url>
   <licenses>
     <license>
       <name>GNU General Public License 3</name>
@@ -46,9 +46,9 @@
   </parent>
 
   <scm>
-    <connection>scm:hg:https://code.google.com/p/tclass/</connection>
-    <developerConnection>scm:hg:https://code.google.com/p/tclass/</developerConnection>
-    <url>http://code.google.com/p/tclass</url>
+    <connection>scm:git:https://github.com/fracpete/tclass</connection>
+    <developerConnection>scm:git:https://github.com/fracpete/tclass</developerConnection>
+    <url>https://github.com/fracpete/tclass</url>
     <tag>HEAD</tag>
   </scm>
 
